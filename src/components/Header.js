@@ -9,7 +9,7 @@ function Header(props) {
   }
   return (
     <header className={`header ${isMenu && 'header_menu-show'}`}>
-      <a href="https://happymarvin.github.io/mesto/" className="header__logo"> </a>
+      <a href="https://github.com/HappyMarvin/react-mesto-auth" className="header__logo"> </a>
       <Switch>
       <Route exact path='/sign-in'>
         <Link className="header__link" to="/sign-up">Регистрация</Link>
