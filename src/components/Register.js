@@ -8,7 +8,7 @@ function Register(props) {
   const [popupMessage, setPopupMessage] = useState('');
   const [isRegisterPopup, setIsRegisterPopup] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(false);
-  let history = useHistory();
+  const history = useHistory();
 
   useEffect(() => {
     if (props.loggedIn) history.push('/')

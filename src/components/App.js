@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, useHistory } from 'react-router-dom';
 import Header from './Header'
 import Main from './Main'
 import Footer from './Footer'
@@ -27,6 +27,7 @@ function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [user, setUser] = useState({})
   const [isChecked, setIsChecked] = useState(false);
+  const history = useHistory();
 
   function checkToken () {
     const jwt = localStorage.getItem('jwt');
@@ -147,8 +148,9 @@ function App() {
   }
 
   function handleSignout () {
-    localStorage.clear()
+    localStorage.clear();
     setLoggedIn(false);
+    history.push('/sign-in');
   }
 
   return (

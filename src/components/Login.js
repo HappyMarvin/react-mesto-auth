@@ -8,7 +8,7 @@ function Login (props) {
   const [popupMessage, setPopupMessage] = useState('');
   const [isLoginPopup, setIsLoginPopup] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(false);
-  let history = useHistory();
+  const history = useHistory();
 
   useEffect(() => {
     if (props.loggedIn) history.push('/')
