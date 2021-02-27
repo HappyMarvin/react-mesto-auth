@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Route, Switch, useHistory } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Header from './Header'
 import Main from './Main'
 import Footer from './Footer'
@@ -27,7 +27,6 @@ function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [user, setUser] = useState({})
   const [isChecked, setIsChecked] = useState(false);
-  const history = useHistory();
 
   function checkToken () {
     const jwt = localStorage.getItem('jwt');
@@ -59,7 +58,6 @@ function App() {
       .then(setCards)
       .catch(e => console.error(e.message))
   },[]);
-
 
   //handle карточек
   function handleCardLike (card, isLiked) {
@@ -150,7 +148,6 @@ function App() {
   function handleSignout () {
     localStorage.clear();
     setLoggedIn(false);
-    history.push('/sign-in');
   }
 
   return (
@@ -164,14 +161,14 @@ function App() {
           />
           <MainRoute isChecked={isChecked}>
           <Switch>
+            <Route path="/sign-in" >
+              <Login onLogin={handleLogin} loggedIn={loggedIn} checkToken={checkToken} />
+            </Route>
             <Route path="/sign-up" >
               <Register
                 onRegister={handleRegister}
                 loggedIn={loggedIn}
               />
-            </Route>
-            <Route path="/sign-in" >
-              <Login onLogin={handleLogin} loggedIn={loggedIn} checkToken={checkToken} />
             </Route>
             <ProtectedRoute
               loggedIn={loggedIn}
