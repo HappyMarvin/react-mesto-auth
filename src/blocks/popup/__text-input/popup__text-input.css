@@ -1,0 +1,13 @@
+.popup__text-input {
+  margin-top: 1px;
+  padding: 0 0 8px 0;
+  border: none;
+  border-bottom: rgba(0, 0, 0, 0.2) 1px solid;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.popup__text-input:focus {
+  outline: none;
+  border-bottom: rgba(0, 0, 0, 0.8) 1px solid;
+}

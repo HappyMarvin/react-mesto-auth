@@ -1,0 +1,14 @@
+.profile__name-wrapper {
+  white-space: nowrap;
+  display: grid;
+  grid-template-columns: 1fr 24px;
+  align-items: center;
+  margin-right: 24px;
+}
+
+@media screen and (max-width: 588px) {
+  .profile__name-wrapper {
+    grid-template-columns: 1fr 18px;
+    margin-right: 0;
+  }
+}

@@ -1,0 +1,17 @@
+.gallery__list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 282px);
+  column-gap: 18px;
+  row-gap: 21px;
+  justify-content: center;
+}
+
+@media screen and (max-width: 588px) {
+  .gallery__list {
+    grid-template-columns: minmax(236px, 1fr);
+    row-gap: 20px;
+  }
+}

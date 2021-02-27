@@ -1,0 +1,18 @@
+.header {
+  padding: 45px 0 39px 2px;
+  border-bottom: 1px solid rgba(84, 84, 84, 0.7);
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  transition: margin-top .5s;
+}
+
+@media screen and (max-width: 680px) {
+  .header {
+    display: flex;
+    margin: 0 -19px;
+    padding: 0 0 31px 0;
+    flex-direction: column-reverse;
+    margin-top: -150px;
+  }
+}

@@ -1,0 +1,10 @@
+.card__inner-wrapper {
+  min-height: 79px;
+  background-color: #fff;
+  color: #000;
+  border-radius: 0 0 10px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 21px 0 20px;
+}

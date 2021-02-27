@@ -1,0 +1,8 @@
+.popup__text-input_type_error {
+  border-bottom: #f00 1px solid;
+}
+
+.popup__text-input_type_error:focus {
+  outline: none;
+  border-bottom: #f00 1px solid;
+}
