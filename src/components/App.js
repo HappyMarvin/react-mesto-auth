@@ -156,6 +156,7 @@ function App() {
       <div className="page">
         <div className="container">
           <Header
+            loggedIn={loggedIn}
             email={user.email}
             onSignout={handleSignout}
           />
@@ -168,7 +169,7 @@ function App() {
               />
             </Route>
             <Route path="/sign-in" >
-              <Login onLogin={handleLogin} loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
+              <Login onLogin={handleLogin} loggedIn={loggedIn} checkToken={checkToken} />
             </Route>
             <ProtectedRoute
               loggedIn={loggedIn}

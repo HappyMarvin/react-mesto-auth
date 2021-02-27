@@ -24,9 +24,8 @@ function Login (props) {
 
   function onClose () {
     setIsLoginPopup(false);
-    props.setLoggedIn(true);
     if (submitStatus) {
-      history.push("./");
+      props.checkToken();
     }
   }
 
