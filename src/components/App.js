@@ -35,9 +35,14 @@ function App() {
         .then(res=>{
           setLoggedIn(true);
           setUser({
-            email: res.data.email,
-            id: res.data._id
+            email: res.email,
+            id: res._id
           })
+          setCurrentUser(res)
+          api.setJwt(jwt);
+          api.getInitialCards()
+            .then(setCards)
+            .catch(e => console.error(e.message))
         })
         .catch(e => console.error(e.message))
         .finally(()=>{
@@ -51,12 +56,6 @@ function App() {
   
   useEffect(() => {
     checkToken();
-    api.getUserData()
-      .then(setCurrentUser)
-      .catch(e => console.error(e.message))
-    api.getInitialCards()
-      .then(setCards)
-      .catch(e => console.error(e.message))
   },[]);
 
   //handle карточек

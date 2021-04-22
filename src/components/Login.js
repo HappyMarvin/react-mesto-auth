@@ -39,8 +39,11 @@ function Login (props) {
       .catch(e => {
         console.error(e.message)
         switch (e.message) {
-          case "Incorrect email address or password":
-            setPopupMessage("Некорректный email или пароль");
+          case "celebrate request validation failed":
+            setPopupMessage("Введены некорректные данные");
+            break;
+          case "Неправильные почта или пароль":
+            setPopupMessage("Неправильные почта или пароль");
             break;
           case "Поле \"password\" должно быть заполнено":
             setPopupMessage("Поле \"Пароль\" должны быть заполенено");

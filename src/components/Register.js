@@ -38,6 +38,9 @@ function Register(props) {
       })
       .catch(e => {
         switch (e.message) {
+          case "celebrate request validation failed":
+            setPopupMessage("Введены некорректные данные");
+            break;
           case "The \"email\" field is required":
             setPopupMessage("Поле \"Email\" должны быть заполенено");
             break;
@@ -47,8 +50,8 @@ function Register(props) {
           case "The \"email\" field must be a valid email address":
             setPopupMessage("Необходимо ввести валидный Email");
             break;
-          case "Пользователь с таким email уже зарегистрирован":
-            setPopupMessage("Пользователь с таким email уже зарегистрирован");
+          case "Пользователь с таким email уже существует":
+            setPopupMessage("Пользователь с таким email уже существует");
             break;
           default:
             setPopupMessage("Что-то пошло не так! Попробуйте ещё раз.");

@@ -9,6 +9,10 @@ class Api {
       return Promise.reject(new Error(`Ошибка: ${res.status}`))
   }
 
+  setJwt (jwt) {
+    this._headers.authorization = `Bearer ${jwt}`;
+ }
+
   getUserData() {
     return fetch(`${this._baseUrl}users/me`, {
       headers: this._headers
@@ -56,7 +60,7 @@ class Api {
   }
 
   switchLike(card, method) {
-    return fetch(`${this._baseUrl}cards/likes/${card._id}`, {
+    return fetch(`${this._baseUrl}cards/${card._id}/likes`, {
       method: method,
       headers: this._headers
     })
@@ -76,9 +80,8 @@ class Api {
 }
 
 const api = new Api({
-  baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-19/',
+  baseUrl: 'http://localhost:3001/',
   headers: {
-    authorization: '7a0583fa-0284-4573-a326-4d7fa2ed6e73',
     'Content-Type': 'application/json'
   }
 })

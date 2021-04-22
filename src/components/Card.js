@@ -3,8 +3,9 @@ import { CurrentUserContext } from '../contexts/CurrentUserContext';
 
 function Card (props) {
   const currentUser = useContext(CurrentUserContext);
-  const isOwn = currentUser._id === props.card.owner._id || '';
-  const isLiked = props.card.likes.some(like => like._id === currentUser._id) || '';
+  const isOwn = currentUser._id === props.card.owner || '';
+  const isLiked = props.card.likes.some(like => like === currentUser._id) || '';
+
   function handleClick() {
     props.onCardClick(props.card);
   }
@@ -14,7 +15,6 @@ function Card (props) {
   function onDeleteClick() {
     props.onCardDelete(props.card);
   }
-
   return (
     <li className="card">
       <div className="card__image-wrapper">
@@ -24,11 +24,11 @@ function Card (props) {
         <h2 className="card__title">{props.card.name}</h2>
         <div className="card__like-wrapper">
           <button
-            className={`card__like ${isLiked && 'card__like_active'}`}
-            onClick={onCardLike}
-            type="button"
-            aria-label="Лайк"
-          ></button>
+  className={`card__like ${isLiked && 'card__like_active'}`}
+  onClick={onCardLike}
+  type="button"
+  aria-label="Лайк"
+  />
           <span className="card__like-count">{props.card.likes.length}</span>
         </div>
       </div>
