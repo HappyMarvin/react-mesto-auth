@@ -80,7 +80,7 @@ class Api {
 }
 
 const api = new Api({
-  baseUrl: 'http://localhost:3001/',
+  baseUrl: 'https://mesto-back.happymarvin.ru/',
   headers: {
     'Content-Type': 'application/json'
   }

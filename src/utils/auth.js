@@ -47,6 +47,6 @@ class Auth {
   }
 }
 
-const auth = new Auth("http://localhost:3001");
+const auth = new Auth("https://mesto-back.happymarvin.ru");
 
 export default  auth
