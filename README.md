@@ -27,6 +27,9 @@ npm run serve
 * JS
 * React
 
+Установка:
+### `npm i`
+
 Запуск:
 
 ### `npm start`
